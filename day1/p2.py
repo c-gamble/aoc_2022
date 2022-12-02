@@ -13,4 +13,4 @@ with open('./in.txt') as file:
 sums = []
 for arr in data:
     sums.append(sum(arr))
-print(sum(sorted(sums, reverse=True)[0:3))
+print(sum(sorted(sums, reverse=True)[0:3]))
