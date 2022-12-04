@@ -7,18 +7,15 @@ with open('./in.txt') as file:
         mvs = line.split(' ')
         rounds.append(mvs)
 
-total = 0
 
+values = {'X': 1, 'Y': 2, 'Z': 3}
+draw = {'A': 'X', 'B':'Y', 'C':'Z'}
+win = {'A': 'Y', 'B':'Z', 'C': 'X'}
+
+total = 0
 for round in rounds:
-    if round[1] == 'X': total += 1
-    elif round[1] == 'Y': total += 2
-    elif round[1] == 'Z': total += 3
-    if (round[0] == 'A' and round[1] == 'X') or (round[0] == 'B' and round[1] == 'Y') or (round[0] == 'C' and round[1] == 'Z'): total += 3
-    elif round[0] == 'A' and round[1] == 'Y': total += 6
-    elif round[0] == 'A' and round[1] == 'Z': total += 0
-    elif round[0] == 'B' and round[1] == 'X': total += 0
-    elif round[0] == 'B' and round[1] == 'Z': total += 6
-    elif round[0] == 'C' and round[1] == 'X': total += 6
-    elif round[0] == 'C' and round[1] == 'Y': total += 0
+    total += values[round[1]]
+    if round[1] == draw[round[0]]: total += 3
+    elif round[1] == win[round[0]]: total += 6
 
 print(total)
