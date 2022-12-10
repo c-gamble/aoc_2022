@@ -6,7 +6,6 @@ with open('./day10/in.txt') as file:
 
 c = 1
 x = 1
-ans = []
 out = ["" for _ in range(6)]
 sprite = 1
 
