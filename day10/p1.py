@@ -1,22 +1,18 @@
 data = []
-
 with open('./day10/in.txt') as file:
     for line in file:
         data.append(line.split('\n')[0].split(" "))
-
-c = 0
+c = 1
 x = 1
 ans = []
 for instr in data:
-    print(c, x)
-    if c == 19 or c == 59 or c== 99 or c == 139 or c == 179 or c == 219:
-        ans.append((c+1)*x)
-    if instr[0] == "noop": 
-        c += 1
-        continue
+    if (c+20) % 40 == 0: 
+        print(c, x, c*x, "noop")
+        ans.append(c*x)
+   
+    if instr[0] == "noop": c += 1
     else:
         c += 2
-        if c - 1 == 219 or c - 1 == 19 or c - 1 == 59 or c - 1 == 99 or c - 1 == 139 or c - 1 == 179:
-            ans.append(c*x)
+        if (c+19) % 40 == 0: ans.append((c-1)*x)
         x += int(instr[1])
 print(sum(ans))
