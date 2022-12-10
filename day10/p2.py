@@ -32,8 +32,6 @@ for instr in data:
         x += int(instr[1])
 
         for _ in range(2):  
-            if c == 10:
-                print(x, instr, sprite)
             if sprite == (c-1) % 40 or sprite + 1 == (c-1) % 40 or sprite - 1 == (c-1) % 40: 
                 if  c <= 40: out[0] += "#"
                 elif c <= 80: out[1] += "#"
