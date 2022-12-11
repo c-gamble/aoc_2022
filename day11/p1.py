@@ -1,5 +1,3 @@
-import copy
-
 monkeys  = []
 with open("./day11/in.txt") as file:
     curr_monkey = {}

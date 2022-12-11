@@ -1,4 +1,3 @@
-import copy
 import math 
 
 monkeys  = []
@@ -51,5 +50,4 @@ for _ in range(10000):
 
 inspections = []
 for monkey in monkeys: inspections.append(monkey['inspected'])
-print(inspections)
 print(sorted(inspections, reverse = True)[:2][0]*sorted(inspections, reverse = True)[:2][1])
